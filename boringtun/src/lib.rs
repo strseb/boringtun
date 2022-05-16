@@ -7,9 +7,9 @@
 
 pub mod crypto;
 
-#[cfg(not(any(target_os = "windows", target_os = "android", target_os = "ios")))]
+#[cfg(not(any(target_os = "windows", target_os = "android", target_os = "ios", target_arch = "wasm32" )))]
 pub mod device;
-
+#[cfg(not(any(target_arch = "wasm32")))]
 pub mod ffi;
 pub mod noise;
 
